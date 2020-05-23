@@ -22,7 +22,7 @@ let PVenta = {
     // Recordar solo agregar los metodos de la Api.
 
     getcategoria:function(idcategoria){
-       let usuario=null;
+       let categoria=null;
        PVenta._categorias.map((u)=> {if (u.id == idcategoria) return categoria=u});
        return categoria;
     },
