@@ -1,8 +1,8 @@
+
 let myStorage = window.localStorage;
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
   })
-
 let PVenta = { 
     /*  creamos un espacio de nombre PVenta
         vamos a crear un CRUD (Create, Read, Update, Delete)
@@ -21,8 +21,8 @@ let PVenta = {
 
     
     // Metodos de nuestro Punto de Venta
-    // Recordar solo agregar los metodos de la Api.
-
+    // Recordar solo agregar los metodos de la Api./
+    //------------------------------------------------------------// METODOS USUARIO//-------------------------------------------------//
     getUsuario:function(idUsuario){
        let usuario=null;
        PVenta._usuarios.map((u)=> {if (u.id == idUsuario) return usuario=u});
@@ -74,6 +74,89 @@ let PVenta = {
        this.saveData();
 
     },
+    //------------------------------------------------------------// METODOS CATEGORIAS//-------------------------------------------------//
+    getcategoria:function(idcategoria){
+        let categoria=null;
+        PVenta._categorias.map((u)=> {if (u.id == idcategoria) return categoria=u});
+        return categoria;
+     },
+     getcategorias(){
+         return PVenta._categorias
+     },
+ 
+     addcategoria(categoria){
+        PVenta._categorias.push(categoria);
+        this.saveData();
+ 
+     },
+ 
+     deletecategoria(categoria){
+         let indice =0;
+         for (let i=0; i<PVenta._categorias.length;i++){
+             if (PVenta._categorias[i].id == categoria){ 
+                 indice =i;
+             }
+         }    
+         if (indice>=0){ 
+                 PVenta._categorias.splice(indice,1);
+                 this.saveData();
+         }
+     },
+ 
+     updatecategoria(categoria){
+         let indice=-1; 
+ 
+         for (let i=0; i<PVenta._categorias.length;i++){
+             if (PVenta._categorias[i].id == categoria.id) 
+                 indice =i;
+         }
+         if (indice>=0){ 
+             PVenta._categorias[indice]=categoria;
+             this.saveData();
+         }
+     },
+//------------------------------------------------------------// METODOS PRODUCTO//-------------------------------------------------//
+    getproductos:function(idproducto){
+        let producto=null;
+        PVenta._productos.map((u)=> {if (u.id == idproducto) return producto=u});
+        return producto;
+    },
+    getproductos(){
+        return PVenta._productos
+    },
+
+    addproducto(producto){
+        PVenta._productos.push(producto);
+        this.saveData();
+
+    },
+
+    deleteproducto(producto){
+        let indice =0;
+        for (let i=0; i<PVenta.productos.length;i++){
+            if (PVenta._productos[i].id == producto){ 
+                indice =i;
+            }
+        }    
+        if (indice>=0){ 
+                PVenta._productos.splice(indice,1);
+                this.saveData();
+         }
+    },
+
+    updateproducto(producto){
+        let indice=-1; 
+
+        for (let i=0; i<PVenta.productos.length;i++){
+            if (PVenta.productos[i].id == producto.id) 
+                indice =i;
+        }
+        if (indice>=0){ 
+            PVenta.productos[indice]=producto;
+            this.saveData();
+        }
+    },
+
     saveData(){
         let data={
             usuarios:this._usuarios,
