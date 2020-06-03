@@ -35,7 +35,7 @@ let PVenta = {
         let indice=-1; // no hemos encontrado nada aun
         
         for (let i=0; i<PVenta._categorias.length;i++){
-            if (PVenta._usuarios[i].id == idcategoria){ 
+            if (PVenta._categorias[i].id == idcategoria){ 
                 indice =i;
             }
         }    
@@ -45,11 +45,11 @@ let PVenta = {
                 this.saveData();
         }
      },
-    updateUsuario(usuario){
+    updateUsuario(categoria){
         let indice=-1; // no hemos encontrado nada aun
 
         for (let i=0; i<PVenta._usuarios.length;i++){
-            if (PVenta._usuarios[i].id == usuario.id) 
+            if (PVenta._categorias[i].id == categoria.id) 
                 indice =i;
         }
         if (indice>=0){ //hemos localizado el objeto persona
