@@ -1,0 +1,53 @@
+<!--
+function Categoria(id, nombre , idCatPadre , detalle, porcgancia) {
+    this.id=id, 
+    this.nombre=nombre , 
+    this.idCatPadre=idCatPadre , //id de la categoria padre
+    this.detalle=detalle, 
+    this.porcgancia=porcgancia
+}
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Categorias</title>
+</head>
+<body>
+    <form>
+        <div class="form-group">
+          <label for="formGroupExampleInput">producto</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="nombre del producot">
+        </div>
+        <form>
+            <div class="form-row align-items-center">
+                <div class="col-auto my-1">
+                    <label for="inlineFormCustomSelect">tipo de categoria</label>
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <option selected>tipo categoria</option>
+                        <option value="1">categoria principal</option> <!--si es padre... el valor por defecto va  a ser null-->
+                        <option value="2">Subcategoria</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-xs">
+                <label for="comment">Detalles</label>
+                <textarea class="form-control" rows="2" id="comment"></textarea>
+              </div>
+            <div class = "row">
+                <div class = "col-3">
+                    <label class="sr-only-xs" for="inlineFormInputGroup">porcentaje ganancia</label>
+                    <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                    <div class="input-group-text">%</div>    
+                    <input type="text" class="form-control-xs" id="inlineFormInputGroup" placeholder='porcentaje'>
+                </div>
+            </div>
+        
+        </form>   
+    </form>
+</body>
+</html>
